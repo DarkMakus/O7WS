@@ -11,6 +11,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.Common", "00.Common", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angkor.O7Common.Entities", "0.Common\Angkor.O7Common.Entities\Angkor.O7Common.Entities.csproj", "{2471E659-35F0-40E4-8DBE-B61CD0657E2E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Domain", "02.Domain", "{B3046232-08AE-45FF-A8DA-0C5BB54D90A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Data", "01.Data", "{C73148C4-B15D-4E4A-BEEE-491288D2EABA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angkor.O7Common.Domain", "2.Domain\Angkor.O7Common.Domain\Angkor.O7Common.Domain.csproj", "{7418EE5C-7E78-437D-8F4F-98A450FC0C41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angkor.O7Common.Data", "1.Data\Angkor.O7Common.Data\Angkor.O7Common.Data.csproj", "{680E6E19-77E7-42CC-97B3-EDFB18EFD226}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angkor.O7Common.Data.Oracle", "1.Data\Angkor.O7Common.Data.Oracle\Angkor.O7Common.Data.Oracle.csproj", "{38DF09C3-473E-4882-9A50-B0B2A8C8FFB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +35,18 @@ Global
 		{2471E659-35F0-40E4-8DBE-B61CD0657E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2471E659-35F0-40E4-8DBE-B61CD0657E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2471E659-35F0-40E4-8DBE-B61CD0657E2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7418EE5C-7E78-437D-8F4F-98A450FC0C41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7418EE5C-7E78-437D-8F4F-98A450FC0C41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7418EE5C-7E78-437D-8F4F-98A450FC0C41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7418EE5C-7E78-437D-8F4F-98A450FC0C41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{680E6E19-77E7-42CC-97B3-EDFB18EFD226}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{680E6E19-77E7-42CC-97B3-EDFB18EFD226}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{680E6E19-77E7-42CC-97B3-EDFB18EFD226}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{680E6E19-77E7-42CC-97B3-EDFB18EFD226}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38DF09C3-473E-4882-9A50-B0B2A8C8FFB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38DF09C3-473E-4882-9A50-B0B2A8C8FFB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38DF09C3-473E-4882-9A50-B0B2A8C8FFB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38DF09C3-473E-4882-9A50-B0B2A8C8FFB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,5 +54,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{43EF0A53-E506-467B-A95D-01F8D0608489} = {D6E6223B-8EBF-4E24-9AB5-84792B02C216}
 		{2471E659-35F0-40E4-8DBE-B61CD0657E2E} = {464DE246-3207-49A7-B582-54FB1FD0A5EE}
+		{7418EE5C-7E78-437D-8F4F-98A450FC0C41} = {B3046232-08AE-45FF-A8DA-0C5BB54D90A1}
+		{680E6E19-77E7-42CC-97B3-EDFB18EFD226} = {C73148C4-B15D-4E4A-BEEE-491288D2EABA}
+		{38DF09C3-473E-4882-9A50-B0B2A8C8FFB6} = {C73148C4-B15D-4E4A-BEEE-491288D2EABA}
 	EndGlobalSection
 EndGlobal
