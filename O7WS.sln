@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Web Service", "03.Web Service", "{D6E6223B-8EBF-4E24-9AB5-84792B02C216}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angkor.O7Common.WebService", "3.Web Service\Angkor.O7Common.WebService\Angkor.O7Common.WebService.csproj", "{43EF0A53-E506-467B-A95D-01F8D0608489}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.Common", "00.Common", "{464DE246-3207-49A7-B582-54FB1FD0A5EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angkor.O7Common.Entities", "0.Common\Angkor.O7Common.Entities\Angkor.O7Common.Entities.csproj", "{2471E659-35F0-40E4-8DBE-B61CD0657E2E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43EF0A53-E506-467B-A95D-01F8D0608489}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43EF0A53-E506-467B-A95D-01F8D0608489}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43EF0A53-E506-467B-A95D-01F8D0608489}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43EF0A53-E506-467B-A95D-01F8D0608489}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2471E659-35F0-40E4-8DBE-B61CD0657E2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2471E659-35F0-40E4-8DBE-B61CD0657E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2471E659-35F0-40E4-8DBE-B61CD0657E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2471E659-35F0-40E4-8DBE-B61CD0657E2E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{43EF0A53-E506-467B-A95D-01F8D0608489} = {D6E6223B-8EBF-4E24-9AB5-84792B02C216}
+		{2471E659-35F0-40E4-8DBE-B61CD0657E2E} = {464DE246-3207-49A7-B582-54FB1FD0A5EE}
+	EndGlobalSection
+EndGlobal
