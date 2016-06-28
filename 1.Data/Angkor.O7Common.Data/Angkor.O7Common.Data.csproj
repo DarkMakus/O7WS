@@ -59,16 +59,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\CTDMUSRCIA.cs" />
     <Compile Include="Context\SecurityContext.cs" />
-    <Compile Include="Entity\Entity.cs" />
-    <Compile Include="Entity\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provider\SecurityProvider.cs" />
+    <Compile Include="Utility\EntityExtension.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <ProjectReference Include="..\..\0.Common\Angkor.O7Common.Entities\Angkor.O7Common.Entities.csproj">
+      <Project>{2471e659-35f0-40e4-8dbe-b61cd0657e2e}</Project>
+      <Name>Angkor.O7Common.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

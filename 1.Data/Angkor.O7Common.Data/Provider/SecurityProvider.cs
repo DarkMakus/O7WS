@@ -8,6 +8,10 @@ namespace Angkor.O7Common.Data.Provider
     {
         string EncryptPassword (string password);
 
-        List<User> FindUsers (string nickName, string password);
+        List<CTDMUSRCIA> FindUsers (string nickName, string password);
+
+        string CompanyDescription (string id);
+
+        string BranchDescription (string companyId, string branchId);
     }
 }

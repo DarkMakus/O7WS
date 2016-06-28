@@ -24,24 +24,39 @@ namespace Angkor.O7Common.Data.Oracle
                 _context.Database.SqlQuery<string> ("SELECT O7WEB_MD5.MD5(:param) FROM DUAL", param).FirstOrDefault ( );
         }
 
-        public List<User> FindUsers (string nickName, string password)
+        public List<CTDMUSRCIA> FindUsers (string nickName, string password)
         {
-            IQueryable<User> urs =  from user in _context.Users
-                                    where user.CTUCCODUSR == nickName && user.CTUCPWDCLN == password
-                                    select user;
+            IQueryable<CTDMUSRCIA> urs = from user in _context.CTDMUSRCIAs
+                where user.CTUCCODUSR == nickName && user.CTUCPWDCLN == password
+                select user;
             return urs.ToList ( );
+        }
+
+        public string CompanyDescription (string id)
+        {
+            var param = new OracleParameter ("cia", OracleDbType.Varchar2, id, ParameterDirection.Input);
+            return
+                _context.Database.SqlQuery<string> ("SELECT MCC_UTILBD.GET_TBLVAL('002',:cia,'DESC_LARGA') FROM DUAL",
+                    param).FirstOrDefault ( );
+        }
+
+        public string BranchDescription (string companyId, string branchId)
+        {
+            var param = new OracleParameter ("ciasuc", OracleDbType.Varchar2,
+                string.Format ("{0}{1}", companyId, branchId), ParameterDirection.Input);
+            return
+                _context.Database.SqlQuery<string> (
+                    "SELECT MCC_UTILBD.GET_TBLVAL('002',:ciasuc,'DESC_LARGA') FROM DUAL", param).FirstOrDefault ( );
         }
 
         #region Implementation of IDisposable
         /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        ///     Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
         /// </summary>
         public void Dispose ( )
         {
             _context.Dispose ( );
         }
         #endregion
-
-        
     }
 }
