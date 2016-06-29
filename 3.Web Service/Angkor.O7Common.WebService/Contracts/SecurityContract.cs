@@ -8,9 +8,9 @@ namespace Angkor.O7Common.WebService.Contracts
     public interface SecurityContract
     {
         [OperationContract]
-        List <Company> FindCredentials (string nickname, string password);
+        List<Company> FindCredentials (string nickname, string password);
 
         [OperationContract]
-        Worker FindWorker (Company company, string nickname);
+        Worker FindWorker (Company company, Branch branch, string nickname);
     }
 }

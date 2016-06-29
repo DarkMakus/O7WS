@@ -25,13 +25,14 @@ namespace Angkor.O7Common.Domain
                 if(result.ExistsCompanyId (user.CTUCCODCIA)) continue;
                 var companyId = user.CTUCCODCIA;
                 var companyDescription = provider.CompanyDescription(companyId);
-                var company = new Company {Id = companyId, Description = companyDescription, Branches = new List<Branch> ()};
+                var branches = new List<Branch> ( );
                 foreach (CTDMUSRCIA USER in users.Where (usr=>usr.CTUCCODCIA == companyId))
                 {
                     var branchId = USER.CTUCCODSUC;
                     var branchDescription = provider.BranchDescription(companyId, branchId);
-                    company.Branches.Add(new Branch { Id = branchId, Description = branchDescription });
+                    branches.Add (new Branch {Id = branchId, Description = branchDescription});
                 }
+                var company = new Company {Id = companyId, Description = companyDescription, Branches = branches.ToArray ( )};
                 result.Add (company);
             }
             return result;
@@ -43,6 +44,15 @@ namespace Angkor.O7Common.Domain
             {
                 List<CTDMUSRCIA> access = GetUserAccess (provider, nickname, password);
                 return GetCompanies (provider, access);                
+            }
+        }
+
+        public Worker FindWorker(Company company, Branch branch, string nickname)
+        {
+            using (SecurityProvider provider = new SecurityOracleProvider(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+            {
+                CTDMUSRCIA user = provider.FindUser (company.Id, branch.Id, nickname);
+                return new Worker {Id = user.CTUCCODTRA, Name = user.CTUCNOMUSR, Active = user.CTUCACTIVO};
             }
         }
     }

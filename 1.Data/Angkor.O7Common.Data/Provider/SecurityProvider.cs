@@ -10,6 +10,8 @@ namespace Angkor.O7Common.Data.Provider
 
         List<CTDMUSRCIA> FindUsers (string nickName, string password);
 
+        CTDMUSRCIA FindUser(string companyId, string branchId, string nickName);
+
         string CompanyDescription (string id);
 
         string BranchDescription (string companyId, string branchId);
