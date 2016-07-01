@@ -11,6 +11,13 @@ namespace Angkor.O7Common.Domain
 {
     public class SecurityDomain
     {
+        private string _connection;
+
+        public SecurityDomain ( )
+        {
+            _connection = ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString;
+        }
+
         private List<CTDMUSRCIA> GetUserAccess (SecurityProvider provider, string nickName, string password)
         {
             string encryptedPass = provider.EncryptPassword(password);
@@ -40,7 +47,7 @@ namespace Angkor.O7Common.Domain
 
         public List<Company> FindCredentials (string nickname, string password)
         {                             
-            using (SecurityProvider provider = new SecurityOracleProvider(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+            using (SecurityProvider provider = new SecurityOracleProvider(_connection))
             {
                 List<CTDMUSRCIA> access = GetUserAccess (provider, nickname, password);
                 return GetCompanies (provider, access);                
@@ -49,7 +56,7 @@ namespace Angkor.O7Common.Domain
 
         public Worker FindWorker(Company company, Branch branch, string nickname)
         {
-            using (SecurityProvider provider = new SecurityOracleProvider(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+            using (SecurityProvider provider = new SecurityOracleProvider(_connection))
             {
                 CTDMUSRCIA user = provider.FindUser (company.Id, branch.Id, nickname);
                 return new Worker {Id = user.CTUCCODTRA, Name = user.CTUCNOMUSR, Active = user.CTUCACTIVO};
